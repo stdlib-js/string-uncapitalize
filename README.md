@@ -31,7 +31,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import uncapitalize from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-uncapitalize@v0.0.9-deno/mod.js';
+import uncapitalize from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-uncapitalize@deno/mod.js';
 ```
 
 #### uncapitalize( str )
@@ -57,7 +57,7 @@ out = uncapitalize( 'Hidden Treasures' );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import uncapitalize from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-uncapitalize@v0.0.9-deno/mod.js';
+import uncapitalize from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-uncapitalize@deno/mod.js';
 
 var out = uncapitalize( 'Last man standing' );
 // returns 'last man standing'
