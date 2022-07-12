@@ -24,38 +24,30 @@ limitations under the License.
 
 > Uncapitalize the first character of a string.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/string-uncapitalize
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-uncapitalize = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/string-uncapitalize@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var uncapitalize = require( 'path/to/vendor/umd/string-uncapitalize/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-uncapitalize@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.uncapitalize;
-})();
-</script>
+var uncapitalize = require( '@stdlib/string-uncapitalize' );
 ```
 
 #### uncapitalize( str )
@@ -80,13 +72,8 @@ out = uncapitalize( 'Hidden Treasures' );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-uncapitalize@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var uncapitalize = require( '@stdlib/string-uncapitalize' );
 
 var out = uncapitalize( 'Last man standing' );
 // returns 'last man standing'
@@ -99,18 +86,103 @@ out = uncapitalize( 'JavaScript' );
 
 out = uncapitalize( 'Hidden Treasures' );
 // returns 'hidden Treasures'
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use the module as a general utility, install the module globally
+
+```bash
+npm install -g @stdlib/string-uncapitalize
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: uncapitalize [options] [<string>]
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+         --split sep           Delimiter for stdin data. Default: '/\\r?\\n/'.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- CLI usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+### Notes
+
+-   If the split separator is a [regular expression][mdn-regexp], ensure that the `split` option is either properly escaped or enclosed in quotes.
+
+    ```bash
+    # Not escaped...
+    $ echo -n $'Beep\nBoop' | uncapitalize --split /\r?\n/
+
+    # Escaped...
+    $ echo -n $'Beep\nBoop' | uncapitalize --split /\\r?\\n/
+    ```
+
+-   The implementation ignores trailing delimiters.
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ uncapitalize Beep
+beep
+```
+
+To use as a [standard stream][standard-streams],
+
+```bash
+$ echo -n 'Beep' | uncapitalize
+beep
+```
+
+By default, when used as a [standard stream][standard-streams], the implementation assumes newline-delimited data. To specify an alternative delimiter, set the `split` option.
+
+```bash
+$ echo -n 'Beep\tBOOP' | uncapitalize --split '\t'
+beep
+bOOP
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -166,8 +238,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/string-uncapitalize.svg
 [npm-url]: https://npmjs.org/package/@stdlib/string-uncapitalize
 
-[test-image]: https://github.com/stdlib-js/string-uncapitalize/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/string-uncapitalize/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/string-uncapitalize/actions/workflows/test.yml/badge.svg?branch=v0.0.9
+[test-url]: https://github.com/stdlib-js/string-uncapitalize/actions/workflows/test.yml?query=branch:v0.0.9
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/string-uncapitalize/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/string-uncapitalize?branch=main
@@ -202,9 +274,9 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/string/capitalize]: https://github.com/stdlib-js/string-capitalize/tree/umd
+[@stdlib/string/capitalize]: https://github.com/stdlib-js/string-capitalize
 
-[@stdlib/string/lowercase]: https://github.com/stdlib-js/string-lowercase/tree/umd
+[@stdlib/string/lowercase]: https://github.com/stdlib-js/string-lowercase
 
 <!-- </related-links> -->
 
