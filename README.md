@@ -18,7 +18,7 @@ limitations under the License.
 
 -->
 
-# Uncapitalize
+# uncapitalize
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
@@ -52,7 +52,7 @@ var uncapitalize = require( '@stdlib/string-uncapitalize' );
 
 #### uncapitalize( str )
 
-Uncapitalizes the first character of a `string`.
+Uncapitalizes the first character of a string.
 
 ```javascript
 var out = uncapitalize( 'Last man standing' );
